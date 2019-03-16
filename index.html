@@ -1,70 +1,71 @@
 <html>
-	<head>
-		<title>Cakeable Offence</title>
-		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <head>
+    <title>Cakeable Offence</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<style type="text/css">
-			body {
-				font-family: Helvetica, Arial, Tahoma;
+    <style type="text/css">
+      body {
+        font-family: Helvetica, Arial, Tahoma;
         font-size: 64px;
         text-align: center;
-			}
+      }
 
       .one {
         background-color: #EFDC05;
         color: #30A9DE;
       }
+
       .two {
         background-color: #30A9DE;
         color: #EFDC05;
       }
-		</style>
+    </style>
     <script>
       var className = "one";
-			var h = window.innerHeight;
-			var w = window.innerWidth;
+      var h = window.innerHeight;
+      var w = window.innerWidth;
     </script>
-	</head>
-	<body>
+  </head>
+
+  <body>
     <div>
       I've committed a cakeable offence!
     </div>
-		<strong id="textoutput"></strong>
+    <strong id="textoutput"></strong>
 
-		<script>
+    <script>
       document.getElementById("textoutput").innerText = "";
-			var leftPoint = 0;
-			var topPoint = 0;
-			var timer = setInterval(function() {
+      var leftPoint = 0;
+      var topPoint = 0;
+      var timer = setInterval(function () {
         className = className === "one" ? "two" : "one";
         document.body.className = className;
-        //document.getElementById("textoutput").innerText += " CAKE!";
 
-				leftPoint = Math.random() * (0 - w) + w;
-				topPoint = Math.random() * (0 - h) + h;
+        leftPoint = Math.random() * (0 - w) + w;
+        topPoint = Math.random() * (0 - h) + h;
 
-				var e = document.createElement("div");
-				var t = document.createTextNode("CAKE!");
-				e.appendChild(t);
-				e.style.left = leftPoint;
-				e.style.top = topPoint;
-				e.style.position = "fixed";
-				e.className = className;
-				document.body.appendChild(e);
+        var e = document.createElement("div");
+        var t = document.createTextNode("CAKE!");
+        e.appendChild(t);
+        e.style.left = leftPoint;
+        e.style.top = topPoint;
+        e.style.position = "fixed";
+        e.className = className;
+        document.body.appendChild(e);
       }, 1000);
 
-			var cakeTimer = setInterval(function() {
-				var cakeLeft = Math.random() * (0 - w) + w;
-				var cakeTop = Math.random() * (0 - h) + h;
-				var picNum = Math.floor(Math.random() * (1 - 5) + 5);
-				var c = document.createElement("img");
-				c.setAttribute("src", "images/" + picNum + ".jpg");
-				c.style.left = cakeLeft;
-				c.style.top = cakeTop;
-				c.style.width = "100px";
-				c.style.position = "fixed";
-				document.body.appendChild(c);
-			}, 2500);
-		</script>
-	</body>
+      var cakeTimer = setInterval(function () {
+        var cakeLeft = Math.random() * (0 - w) + w;
+        var cakeTop = Math.random() * (0 - h) + h;
+        var picNum = Math.floor(Math.random() * (1 - 5) + 5);
+        var c = document.createElement("img");
+        c.setAttribute("src", "images/" + picNum + ".jpg");
+        c.style.left = cakeLeft;
+        c.style.top = cakeTop;
+        c.style.width = "100px";
+        c.style.position = "fixed";
+        document.body.appendChild(c);
+      }, 2500);
+    </script>
+  </body>
 </html>
